@@ -22,7 +22,7 @@ The second command might take a while if you have installed the light Jessie os.
 
 We need to install some dependencies:
 ```
-pi@emonpi~$ sudo apt-get install libgmp3-dev -y
+pi@emonpi(rw):~$ sudo apt-get install libgmp3-dev -y
 ```
 Next we need to download and install the latest version of the Go programming language (Go 1.7.3). Older versions of Go will not support the latest version of Geth. EmonSD has 3 partitions, we will also work in ~/data.
 ```
@@ -37,12 +37,17 @@ Now run the command $go version to check if the installation was succesful.
 
 INSTALLING GETH
 
-Download the latest Geth source code from github and builpi@emonpi(rw):d it 
+Download the latest Geth source code from github and build it 
 ```
 pi@emonpi(rw):bin$ git clone -b release/1.3.3 https://github.com/ethereum/go-ethereum.git
 pi@emonpi(rw):bin$ cd go-ethereum/
 pi@emonpi(rw):go-ethereum$ make geth
 pi@emonpi(rw):go-ethereum$ sudo cp build/bin/geth /usr/local/bin/
+```
+If, during the installation, you get an error "no space left on device", follow these steps and the rune the command make-geth again:
+```
+pi@emonpi(rw):data$ mkdir ~/bin
+pi@emonpi(rw):~$ sudo mount -B /home/pi/data/newtmp /tmp
 ```
 In order to store the database in the ~/data partition, we need first to create the directory ethData and the run geth with the flag --datadir /home/pi/data/ethData
 ```
