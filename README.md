@@ -13,39 +13,42 @@ INSTALLING DEPENDENCIES
 
 In order to install Geth we need to install a few tools and software packages. First let's make sure everything is up to date and update it if it isn't:
 
+```
 pi@emonpi(rw):~$ sudo apt-get update
 pi@emonpi(rw):~$ sudo apt-get upgrade -y
+```
 
 The second command might take a while if you have installed the light Jessie os.
 
 We need to install some dependencies:
-
+```
 pi@emonpi~$ sudo apt-get install libgmp3-dev -y
-
+```
 Next we need to download and install the latest version of the Go programming language (Go 1.7.3). Older versions of Go will not support the latest version of Geth. EmonSD has 3 partitions, we will also work in ~/data.
-
+```
 pi@emonpi(rw):data$ mkdir ~/bin
 pi@emonpi(rw):data$ cd ~/bin
 pi@emonpi(rw):bin$ wget https://storage.googleapis.com/golang/go1.7.3.linux-armv6l.tar.gz  //To download the arm binary file
 pi@emonpi(rw):bin$ tar -xzvf go1.7.3.linux-armv6l.tar.gz
 pi@emonpi(rw):bin$ export GOROOT=home/pi/data/bin/go
 pi@emonpi(rw):bin$ export PATH=$PATH:$GOROOT/bin
-
+```
 Now run the command $go version to check if the installation was succesful.
 
 INSTALLING GETH
 
 Download the latest Geth source code from github and builpi@emonpi(rw):d it 
-
+```
 pi@emonpi(rw):bin$ git clone -b release/1.3.3 https://github.com/ethereum/go-ethereum.git
 pi@emonpi(rw):bin$ cd go-ethereum/
 pi@emonpi(rw):go-ethereum$ make geth
 pi@emonpi(rw):go-ethereum$ sudo cp build/bin/geth /usr/local/bin/
-
+```
 In order to store the database in the ~/data partition, we need first to create the directory ethData and the run geth with the flag --datadir /home/pi/data/ethData
-
+```
 pi@emonpi(rw):data$ mkdir ~/ethData
-
+```
 You can now start the node on your emonPi:
-
+```
 pi@emonpi(ro):~$ geth --testnet --light --datadir /home/pi/data/ethData console
+```
