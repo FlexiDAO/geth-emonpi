@@ -24,10 +24,10 @@ We need to install some dependencies:
 ```
 pi@emonpi(rw):~$ sudo apt-get install libgmp3-dev -y
 ```
-Next we need to download and install the latest version of the Go programming language (Go 1.7.3). Older versions of Go will not support the latest version of Geth. EmonSD has 3 partitions, we will also work in ~/data.
+Next we need to download and install the latest version of the Go programming language (Go 1.7.3). Older versions of Go will not support the latest version of Geth. EmonSD has 3 partitions, we will work in ~/data.
 ```
-pi@emonpi(rw):data$ mkdir ~/bin
-pi@emonpi(rw):data$ cd ~/bin
+pi@emonpi(rw):data$ mkdir bin
+pi@emonpi(rw):data$ cd bin
 pi@emonpi(rw):bin$ wget https://storage.googleapis.com/golang/go1.7.3.linux-armv6l.tar.gz  //To download the arm binary file
 pi@emonpi(rw):bin$ tar -xzvf go1.7.3.linux-armv6l.tar.gz
 pi@emonpi(rw):bin$ export GOROOT=home/pi/data/bin/go
