@@ -46,7 +46,7 @@ pi@emonpi(rw):go-ethereum$ sudo cp build/bin/geth /usr/local/bin/
 ```
 If, during the installation, you get an error "no space left on device", follow these steps and the rune the command make-geth again:
 ```
-pi@emonpi(rw):data$ mkdir ~/bin
+pi@emonpi(rw):data$ mkdir newtmp
 pi@emonpi(rw):~$ sudo mount -B /home/pi/data/newtmp /tmp
 ```
 In order to store the database in the ~/data partition, we need first to create the directory ethData and the run geth with the flag --datadir /home/pi/data/ethData
