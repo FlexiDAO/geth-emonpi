@@ -30,7 +30,7 @@ pi@emonpi(rw):data$ mkdir bin
 pi@emonpi(rw):data$ cd bin
 pi@emonpi(rw):bin$ wget https://storage.googleapis.com/golang/go1.7.3.linux-armv6l.tar.gz  //To download the arm binary file
 pi@emonpi(rw):bin$ tar -xzvf go1.7.3.linux-armv6l.tar.gz
-pi@emonpi(rw):bin$ export GOROOT=home/pi/data/bin/go
+pi@emonpi(rw):bin$ export GOROOT=/home/pi/data/bin/go
 pi@emonpi(rw):bin$ export PATH=$PATH:$GOROOT/bin
 ```
 Now run the command $go version to check if the installation was succesful.
