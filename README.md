@@ -39,7 +39,7 @@ INSTALLING GETH
 
 Download the latest Geth source code from github and build it 
 ```
-pi@emonpi(rw):bin$ git clone -b release/1.3.3 https://github.com/ethereum/go-ethereum.git
+pi@emonpi(rw):bin$ git clone https://github.com/ethereum/go-ethereum
 pi@emonpi(rw):bin$ cd go-ethereum/
 pi@emonpi(rw):go-ethereum$ make geth
 pi@emonpi(rw):go-ethereum$ sudo cp build/bin/geth /usr/local/bin/
